@@ -1,0 +1,21 @@
+---
+import type { IconType } from '@/types';
+import * as Icons from '@/components/react/icons';
+
+type Props = {
+	type: IconType;
+};
+
+const { type } = Astro.props;
+const iconMap = {
+	ARROW: Icons.ArrowIcon,
+	GITHUB: Icons.GitHubIcon,
+	LINKEDIN: Icons.LinkedInIcon,
+	INSTAGRAM: Icons.InstagramIcon,
+	TWITTER: Icons.TwitterIcon
+};
+
+const Icon = iconMap[type];
+---
+
+<Icon />

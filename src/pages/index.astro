@@ -1,0 +1,184 @@
+---
+import Experience from '@/components/astro/experience/index.astro';
+import IconRenderer from '@/components/astro/icon-renderer/index.astro';
+import { PERSONAL_INFO, SOCIAL_MEDIA_ITEMS, WORK_EXPERIENCES } from '@/content';
+import Layout from '@/layouts/Layout.astro';
+import PageSeo from '@/components/astro/seo-meta/index.astro';
+import { PAGE_SEO_METADATA } from '@/content/meta';
+
+const { name, email, role, about } = PERSONAL_INFO;
+---
+
+<Layout>
+	<PageSeo slot="head" {...PAGE_SEO_METADATA.home} />
+
+	<div class="hero relative z-10">
+		<div
+			class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:flex lg:justify-between lg:px-24 lg:py-0"
+		>
+			<!-- Left side content  -->
+			<header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+				<div class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-left">
+					<div>
+						<a
+							href="/"
+							class="block bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent lg:text-5xl"
+						>
+							<h1>{name}</h1>
+						</a>
+						<h2 class="mt-2 text-sm font-medium text-neutral-400 lg:text-lg">{role}</h2>
+
+						<a
+							data-ccursor
+							href=`mailto:${email}`
+							class="group mt-4 inline-flex items-center gap-x-2 rounded-md border border-neutral-700 border-opacity-50 bg-neutral-400/10 p-2 px-3 py-2.5 text-sm font-semibold text-white shadow backdrop-blur-xl transition-all hover:border-opacity-0"
+						>
+							<span>Email me</span>
+							<sapn class="h-2 w-2 animate-pulse rounded-full bg-green-400 duration-1000"> </sapn>
+						</a>
+					</div>
+				</div>
+
+				<!-- List of Social media profiles -->
+				{
+					SOCIAL_MEDIA_ITEMS.length && (
+						<ul class="mt-8 flex items-center justify-center gap-x-5 lg:justify-normal" aria-label="Social media">
+							{SOCIAL_MEDIA_ITEMS.map((social) => (
+								<li class="rounded p-2 text-xs" data-ccursor>
+									<a
+										class="block hover:text-slate-200"
+										href={social.url}
+										target="_blank"
+										rel="noreferrer noopener"
+										aria-label={`${social.name} (opens in a new tab)`}
+									>
+										<span class="sr-only">{social.name}</span>
+										<IconRenderer type={social.type} />
+									</a>
+								</li>
+							))}
+						</ul>
+					)
+				}
+			</header>
+
+			<!-- Right side content -->
+			<main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+				<!-- About Me Section -->
+				<section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+					<div
+						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+					>
+						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">About</h2>
+					</div>
+
+					<div class="mb-4 space-y-4 whitespace-pre-line">{about}</div>
+				</section>
+
+				<!-- Work Exprience Section -->
+				<section
+					id="experience"
+					class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+					aria-label="Work experience"
+				>
+					<div
+						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+					>
+						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Experience</h2>
+					</div>
+
+					<div>
+						<!-- List of Experiences -->
+						<ol class="group/list space-y-12">
+							{WORK_EXPERIENCES.map((experience) => <Experience {...experience} />)}
+						</ol>
+
+						<!-- Resume CTA -->
+						<div class="mt-12">
+							<a
+								data-ccursor
+								class="group inline-flex items-center rounded p-2 px-3 font-semibold leading-tight text-neutral-200"
+								aria-label="View Full Résumé"
+								target="_blank"
+								rel="noreferrer noopener"
+								href="./resume.pdf"
+							>
+								<span>
+									<span
+										class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+									>
+										View Full
+									</span>
+									<span class="whitespace-nowrap">
+										<span
+											class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+										>
+											Résumé
+										</span>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 20 20"
+											fill="currentColor"
+											class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
+											aria-hidden="true"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+												clip-rule="evenodd"
+											>
+											</path>
+										</svg>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- End Credits Section -->
+				<footer class="max-w-md text-sm text-neutral-500 lg:mb-3">
+					<p>
+						Crafted with
+						<a
+							href="https://astro.build/"
+							class="font-medium text-neutral-400 hover:text-red-300 hover:underline focus-visible:text-red-300"
+							target="_blank"
+							rel="nopener noreferrer">Astro</a
+						>
+						and
+						<a
+							href="https://tailwindcss.com/"
+							class="font-medium text-neutral-400 hover:text-red-300 hover:underline focus-visible:text-red-300"
+							target="_blank"
+							rel="nopener noreferrer">Tailwind CSS</a
+						>. Hosted on
+						<a
+							href="https://www.cloudflare.com/"
+							class="font-medium text-neutral-400 hover:text-red-300 hover:underline focus-visible:text-red-300"
+							target="_blank"
+							rel="nopener noreferrer">Cloudflare</a
+						>. Originally built by
+						<a
+							href="https://github.com/thevrus/vrus.vercel.app"
+							target="_blank"
+							rel="nopener noreferrer"
+							class="font-medium text-neutral-400 hover:text-red-300 hover:underline focus-visible:text-red-300"
+							>Vadim Rusin</a
+						>.
+					</p>
+				</footer>
+			</main>
+		</div>
+	</div>
+</Layout>
+
+<style scoped>
+	.hero {
+		background-image: url(/pattern.svg);
+		background-position: top center;
+		background-repeat: no-repeat;
+		overflow-y: visible;
+		overflow-x: clip;
+	}
+</style>

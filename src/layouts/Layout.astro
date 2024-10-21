@@ -1,0 +1,44 @@
+---
+import SparklesCore from '@/components/react/sparkles-core';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<slot name="head" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+	</head>
+
+	<body
+		class="relative z-10 bg-black leading-relaxed tracking-wide text-neutral-200 antialiased selection:bg-neutral-300 selection:text-neutral-900"
+	>
+		<SparklesCore
+			client:idle
+			id="tsparticlesfullpage"
+			background="transparent"
+			minSize={0.6}
+			maxSize={1.4}
+			opacity={0.2}
+			particleDensity={100}
+			className="fixed z-0 h-full w-full"
+			particleColor="#FFFFFF"
+		/>
+
+		<slot>
+			<p>This is placeholder content for the slot. Please provide child elements to display in the layout.</p>
+		</slot>
+
+		<script src="../scripts/index.ts"></script>
+	</body>
+
+	<style is:global>
+		html {
+			font-family: system-ui, sans-serif;
+			background-size: 224px;
+			font-size: 1.125rem;
+		}
+	</style>
+</html>
