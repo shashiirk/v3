@@ -35,9 +35,9 @@ const websiteUrl = getUrlFromUri(Astro.url.pathname as Uri);
 <meta property="og:site_name" content={applicationName} />
 
 <!-- Twitter Specifies -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content={twitterHandle} />
 <meta name="twitter:creator" content={twitterHandle} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={image} />
+<meta name="twitter:image" content={image} />
