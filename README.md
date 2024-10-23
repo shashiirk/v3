@@ -37,7 +37,7 @@ $ pnpm install
 4. Start the development server:
 
 ```
-pnpm start
+$ pnpm start
 ```
 
 The site will be available at `http://localhost:3000`.
