@@ -4,7 +4,7 @@ export const PERSONAL_INFO: PersonalInfo = {
 	name: 'Shashikanth Reddy',
 	email: 'kolanshashii@gmail.com',
 	role: 'Full-Stack Engineer',
-	about: `I'm a Software Engineer with over two years of experience in full-stack development, currently pursuing my Master's degree in Computer Science at <a href="https://github.com/thevrus/vrus.vercel.app" target="_blank" rel="nopener noreferrer" class="font-medium hover:text-indigo-400 hover:underline focus-visible:text-indigo-400">Kennesaw State University</a>. My journey into tech began with Brad Traversy's HTML & CSS crash course on YouTube, sparking my love for building things and turning into a passion for coding and full-stack development.
+	about: `I'm a Software Engineer with over two years of experience in full-stack development, currently pursuing my Master's degree in Computer Science at <a href="https://www.kennesaw.edu" target="_blank" rel="nopener noreferrer" class="font-medium hover:text-indigo-400 hover:underline focus-visible:text-indigo-400">Kennesaw State University</a>. My journey into tech began with Brad Traversy's HTML & CSS crash course on YouTube, sparking my love for building things and turning into a passion for coding and full-stack development.
 
 	Since then, I've worked in various environments, from startups to established companies, focusing on creating user-friendly applications that are attractive, easy to navigate, and efficient behind the scenes. I enjoy simplifying complex tasks to enhance the user experience. Proficient in languages like Java, JavaScript, and Python, I've also worked with frameworks like Spring Boot, React, and Next.js.
 
