@@ -4,9 +4,11 @@ export const PERSONAL_INFO: PersonalInfo = {
 	name: 'Shashikanth Reddy',
 	email: 'kolanshashii@gmail.com',
 	role: 'Full-Stack Engineer',
-	about: `In my current role as a Full Stack Engineer at Dutch Pet (Remote), I am at the forefront of designing and architecting dutch.com, leveraging a powerful stack including Shopify Storefront API, Admin API, Vue.JS, Node.JS, Liquid, Alpine.js, and Tailwind. My expertise extends to integrating with the ReCharge subscription system and collaborating closely with designers to ensure pixel-perfect layouts and user flows.
-	
-	Looking forward to new challenges and exciting collaborations!
+	about: `I'm a Software Engineer with over two years of experience in full-stack development, currently pursuing my Master's degree in Computer Science at <a href="https://github.com/thevrus/vrus.vercel.app" target="_blank" rel="nopener noreferrer" class="font-medium hover:text-indigo-400 hover:underline focus-visible:text-indigo-400">Kennesaw State University</a>. My journey into tech began with Brad Traversy's HTML & CSS crash course on YouTube, sparking my love for building things and turning into a passion for coding and full-stack development.
+
+	Since then, I've worked in various environments, from startups to established companies, focusing on creating user-friendly applications that are attractive, easy to navigate, and efficient behind the scenes. I enjoy simplifying complex tasks to enhance the user experience. Proficient in languages like Java, JavaScript, and Python, I've also worked with frameworks like Spring Boot, React, and Next.js.
+
+	Always open to new opportunities and collaborations—let's create something amazing together!
   `
 };
 
@@ -41,7 +43,7 @@ export const WORK_EXPERIENCES: WorkExperienceItem[] = [
 		startDate: 'March 2024',
 		endDate: 'July 2024',
 		description:
-			'Designed and architected dutch.com, utilizing technologies such as Shopify Storefront API, Admin API, Vue.JS, Node.JS, Liquid, Alpine.js, and Tailwind. Worked on integrating with the ReCharge subscription system and collaborated closely with designers to implement pixel-perfect layouts and user flows.',
+			'Improved the internal logging framework, ensuring sensitive data was masked and privacy standards were met. Automated the sending of physical mail through third-party services, which reduced manual work and ensured timely delivery. Also created a reminder system that kept agents informed about scheduled interactions, improving response times and overall customer engagement.',
 		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'AWS']
 	},
 	{
@@ -51,7 +53,7 @@ export const WORK_EXPERIENCES: WorkExperienceItem[] = [
 		startDate: 'August 2022',
 		endDate: 'February 2024',
 		description:
-			'Developed and maintained e-commerce solutions on Shopify (Storefront API, Admin API), BigCommerce, and Magento using React JS, Vue JS, Node JS, Liquid, SASS/PostCSS. Worked on integrating with the ReCharge subscription system and collaborated closely with designers to implement pixel-perfect layouts and user flows.',
+			'As part of the core team at this fast-growing startup, contributed to building and scaling key features. Integrated an in-app currency system into the checkout process for Android and iOS platforms, streamlining payments and reducing customer drop-offs. Redesigned the analytics service to work with multiple platforms, enabling comprehensive data collection and deeper business insights. Improved API security by implementing HMAC after a DDoS attack and optimized database queries with indexing, resulting in faster API response times and a smoother user experience.',
 		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'React']
 	},
 	{
@@ -61,7 +63,7 @@ export const WORK_EXPERIENCES: WorkExperienceItem[] = [
 		startDate: 'April 2022',
 		endDate: 'July 2022',
 		description:
-			'Created a Design System for the internal system using Figma. Developed a plugin for Figma to populate prototypes with real data to enhance the prototyping and testing experience. Conducted user research and testing, and created user flows, wireframes, and Hi-Fi prototypes.',
+			'Developed a user-friendly activation screen and dashboard for the in-app currency system, leading to a smoother checkout experience. Improved internal workflows by enhancing the dashboard with advanced search, filtering, and order management tools, boosting operational efficiency. Leveraged TypeScript to improve code quality and maintainability, ensuring a scalable and reliable codebase.',
 		technologies: ['React', 'Next.js', 'TypeScript', 'JavaScript']
 	}
 ];

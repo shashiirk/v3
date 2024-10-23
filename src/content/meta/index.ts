@@ -11,7 +11,6 @@ export const PAGE_SEO_METADATA: Record<PageType, PageSeoMetaData> = {
 		title: 'Shashikanth Reddy | Full-Stack Engineer',
 		description:
 			'Full-Stack Engineer specializing in building scalable web applications using modern technologies like React, Next.js, Node.js, and Spring Boot.',
-		image: '',
 		alt: 'Portfolio homepage, showcasing professional experience',
 		robots: 'index, follow'
 	}

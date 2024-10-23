@@ -7,7 +7,7 @@ type Props = PageSeoMetaData;
 
 const { author, applicationName, twitterHandle } = COMMON_SEO_METADATA;
 
-const { title, description, image, alt, robots = 'index, follow' } = Astro.props;
+const { title, description, alt, robots = 'index, follow' } = Astro.props;
 
 const websiteUrl = getUrlFromUri(Astro.url.pathname as Uri);
 ---
@@ -29,8 +29,8 @@ const websiteUrl = getUrlFromUri(Astro.url.pathname as Uri);
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={websiteUrl} />
-<meta property="og:image" content={image} />
-<meta property="og:image:secure_url" content={image} />
+<meta property="og:image" content="/banner.png" />
+<meta property="og:image:secure_url" content="/banner.png" />
 <meta property="og:image:alt" content={alt} />
 <meta property="og:site_name" content={applicationName} />
 
@@ -40,4 +40,4 @@ const websiteUrl = getUrlFromUri(Astro.url.pathname as Uri);
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content={twitterHandle} />
 <meta name="twitter:creator" content={twitterHandle} />
-<meta name="twitter:image" content={image} />
+<meta name="twitter:image" content="/banner.png" />

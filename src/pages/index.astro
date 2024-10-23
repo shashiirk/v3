@@ -74,7 +74,7 @@ const { name, email, role, about } = PERSONAL_INFO;
 						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">About</h2>
 					</div>
 
-					<p class="mb-4 space-y-4 whitespace-pre-line">{about}</p>
+					<p class="mb-4 space-y-4 whitespace-pre-line text-base" set:html={about} />
 				</section>
 
 				<!-- Work Exprience Section -->
@@ -139,7 +139,7 @@ const { name, email, role, about } = PERSONAL_INFO;
 				</section>
 
 				<!-- End Credits Section -->
-				<footer class="max-w-md text-sm text-neutral-500 lg:mb-3">
+				<footer class="max-w-md text-sm text-neutral-500">
 					<p>
 						Crafted with
 						<a

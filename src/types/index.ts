@@ -43,7 +43,6 @@ export type PageType = 'home';
 export type PageSeoMetaData = {
 	title: string;
 	description: string;
-	image: string;
 	alt: string;
 	robots?: 'index, follow' | 'noindex, follow' | 'noindex, nofollow';
 };
