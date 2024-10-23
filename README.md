@@ -25,7 +25,7 @@ $ git clone https://github.com/shashiirk/v3.git
 2. Navigate to the project directory:
 
 ```
-$ cd v2
+$ cd v3
 ```
 
 3. Install the dependencies:
