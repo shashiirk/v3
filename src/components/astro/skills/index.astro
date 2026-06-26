@@ -1,0 +1,17 @@
+---
+import type { SkillItem } from '@/types';
+
+const { skills } = Astro.props as { skills: SkillItem[] };
+---
+
+<ul class="flex flex-wrap gap-2" aria-label="Skills">
+	{
+		skills.map((skill) => (
+			<li>
+				<div class="flex items-center rounded-full border border-neutral-700 border-opacity-50 bg-neutral-400/10 px-3 py-1 text-xs font-medium leading-5 text-neutral-300 shadow backdrop-blur-sm">
+					{skill.name}
+				</div>
+			</li>
+		))
+	}
+</ul>

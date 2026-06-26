@@ -1,7 +1,9 @@
 ---
+import Education from '@/components/astro/education/index.astro';
 import Experience from '@/components/astro/experience/index.astro';
 import IconRenderer from '@/components/astro/icon-renderer/index.astro';
-import { PERSONAL_INFO, SOCIAL_MEDIA_ITEMS, WORK_EXPERIENCES } from '@/content';
+import Skills from '@/components/astro/skills/index.astro';
+import { EDUCATION, PERSONAL_INFO, SKILLS, SOCIAL_MEDIA_ITEMS, WORK_EXPERIENCES } from '@/content';
 import Layout from '@/layouts/Layout.astro';
 import PageSeo from '@/components/astro/seo-meta/index.astro';
 import { PAGE_SEO_METADATA } from '@/content/meta';
@@ -77,6 +79,19 @@ const { name, email, role, about } = PERSONAL_INFO;
 					<p class="mb-4 space-y-4 whitespace-pre-line text-base" set:html={about} />
 				</section>
 
+				<!-- Skills Section -->
+				<section id="skills" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Skills">
+					<div
+						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+					>
+						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Skills</h2>
+					</div>
+
+					<h2 class="mb-4 hidden text-sm font-bold uppercase tracking-widest text-neutral-200 lg:block">Skills</h2>
+
+					<Skills skills={SKILLS} />
+				</section>
+
 				<!-- Work Exprience Section -->
 				<section
 					id="experience"
@@ -86,81 +101,95 @@ const { name, email, role, about } = PERSONAL_INFO;
 					<div
 						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
 					>
-						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Experience</h2>
+						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Work Experience</h2>
 					</div>
 
-					<div>
-						<!-- List of Experiences -->
-						<ol class="group/list space-y-12">
-							{WORK_EXPERIENCES.map((experience) => <Experience {...experience} />)}
-						</ol>
+					<h2 class="mb-4 hidden text-sm font-bold uppercase tracking-widest text-neutral-200 lg:block">
+						Work Experience
+					</h2>
 
-						<!-- Resume CTA -->
-						<div class="mt-12">
-							<a
-								data-ccursor
-								class="group inline-flex items-center rounded p-2 px-3 font-semibold leading-tight text-neutral-200"
-								aria-label="View Full Résumé"
-								target="_blank"
-								rel="noreferrer noopener"
-								href="./resume.pdf"
-							>
-								<span>
-									<span
-										class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-									>
-										View Full
-									</span>
-									<span class="whitespace-nowrap">
-										<span
-											class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-										>
-											Résumé
-										</span>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-											class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
-											aria-hidden="true"
-										>
-											<path
-												fill-rule="evenodd"
-												d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-												clip-rule="evenodd"
-											>
-											</path>
-										</svg>
-									</span>
+					<!-- List of Experiences -->
+					<ol
+						class="relative space-y-10 before:absolute before:left-[3.5px] before:top-2 before:bottom-2 before:w-px before:bg-neutral-800 sm:before:left-[4.5px]"
+					>
+						{WORK_EXPERIENCES.map((experience) => <Experience {...experience} />)}
+					</ol>
+				</section>
+
+				<!-- Education Section -->
+				<section id="education" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Education">
+					<div
+						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+					>
+						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Education</h2>
+					</div>
+
+					<h2 class="mb-4 hidden text-sm font-bold uppercase tracking-widest text-neutral-200 lg:block">Education</h2>
+
+					<ol
+						class="relative space-y-10 before:absolute before:left-[3.5px] before:top-2 before:bottom-2 before:w-px before:bg-neutral-800 sm:before:left-[4.5px]"
+					>
+						{EDUCATION.map((education) => <Education {...education} />)}
+					</ol>
+
+					<!-- Resume CTA -->
+					<div class="mt-12">
+						<a
+							data-ccursor
+							class="group inline-flex items-center rounded p-2 px-3 font-semibold leading-tight text-neutral-200"
+							aria-label="View Resume"
+							target="_blank"
+							rel="noreferrer noopener"
+							href="./resume.pdf"
+						>
+							<span class="whitespace-nowrap">
+								<span
+									class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+								>
+									View Resume
 								</span>
-							</a>
-						</div>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
+									aria-hidden="true"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+										clip-rule="evenodd"
+									>
+									</path>
+								</svg>
+							</span>
+						</a>
 					</div>
 				</section>
 
 				<!-- End Credits Section -->
 				<footer class="max-w-md text-xs text-neutral-500">
 					<p>
-						Crafted with
+						Crafted with{' '}
 						<a
 							href="https://astro.build/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
 							rel="nopener noreferrer">Astro</a
-						>
-						and
+						>{' '}
+						and{' '}
 						<a
 							href="https://tailwindcss.com/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
 							rel="nopener noreferrer">Tailwind CSS</a
-						>. Hosted on
+						>.{' '}Hosted on{' '}
 						<a
 							href="https://www.cloudflare.com/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
 							rel="nopener noreferrer">Cloudflare</a
-						>. Originally built by
+						>.{' '}Originally built by{' '}
 						<a
 							href="https://github.com/thevrus/vrus.vercel.app"
 							target="_blank"
