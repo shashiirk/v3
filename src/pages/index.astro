@@ -1,12 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import Education from '@/components/astro/education/index.astro';
 import Experience from '@/components/astro/experience/index.astro';
 import IconRenderer from '@/components/astro/icon-renderer/index.astro';
+import SectionHeading from '@/components/astro/section-heading/index.astro';
 import Skills from '@/components/astro/skills/index.astro';
+import Timeline from '@/components/astro/timeline/index.astro';
 import { EDUCATION, PERSONAL_INFO, SKILLS, SOCIAL_MEDIA_ITEMS, WORK_EXPERIENCES } from '@/content';
 import Layout from '@/layouts/Layout.astro';
 import PageSeo from '@/components/astro/seo-meta/index.astro';
 import { PAGE_SEO_METADATA } from '@/content/meta';
+import avatar from '@/assets/avatar.png';
 
 const { name, email, role, about } = PERSONAL_INFO;
 ---
@@ -22,7 +26,14 @@ const { name, email, role, about } = PERSONAL_INFO;
 			<header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
 				<div class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-left">
 					<div>
-						<img src="/avatar.png" alt={name} class="mx-auto h-24 w-24 lg:ml-0" />
+						<Image
+							src={avatar}
+							alt={name}
+							width={96}
+							height={96}
+							loading="eager"
+							class="mx-auto h-24 w-24 lg:ml-0"
+						/>
 
 						<a
 							href="/"
@@ -38,7 +49,7 @@ const { name, email, role, about } = PERSONAL_INFO;
 							class="group mt-4 inline-flex items-center gap-x-2 rounded-md border border-neutral-700 border-opacity-50 bg-neutral-400/10 p-2 px-3 py-2.5 text-sm font-semibold text-white shadow backdrop-blur-xl transition-all hover:border-opacity-0"
 						>
 							<span>Email me</span>
-							<sapn class="h-2 w-2 animate-pulse rounded-full bg-green-400 duration-1000"> </sapn>
+							<span class="h-2 w-2 animate-pulse rounded-full bg-green-400 duration-1000"> </span>
 						</a>
 					</div>
 				</div>
@@ -70,67 +81,38 @@ const { name, email, role, about } = PERSONAL_INFO;
 			<main id="content" class="pt-24 lg:w-1/2 lg:py-24">
 				<!-- About Me Section -->
 				<section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-					<div
-						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-					>
-						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">About</h2>
-					</div>
+					<SectionHeading label="About" showDesktopHeading={false} />
 
 					<p class="mb-4 space-y-4 whitespace-pre-line text-base" set:html={about} />
 				</section>
 
 				<!-- Skills Section -->
 				<section id="skills" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Skills">
-					<div
-						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-					>
-						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Skills</h2>
-					</div>
-
-					<h2 class="mb-4 hidden text-sm font-bold uppercase tracking-widest text-neutral-200 lg:block">Skills</h2>
+					<SectionHeading label="Skills" />
 
 					<Skills skills={SKILLS} />
 				</section>
 
-				<!-- Work Exprience Section -->
+				<!-- Work Experience Section -->
 				<section
 					id="experience"
 					class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
 					aria-label="Work experience"
 				>
-					<div
-						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-					>
-						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Work Experience</h2>
-					</div>
+					<SectionHeading label="Work Experience" />
 
-					<h2 class="mb-4 hidden text-sm font-bold uppercase tracking-widest text-neutral-200 lg:block">
-						Work Experience
-					</h2>
-
-					<!-- List of Experiences -->
-					<ol
-						class="relative space-y-10 before:absolute before:left-[3.5px] before:top-2 before:bottom-2 before:w-px before:bg-neutral-800 sm:before:left-[4.5px]"
-					>
+					<Timeline ariaLabel="Work experience timeline">
 						{WORK_EXPERIENCES.map((experience) => <Experience {...experience} />)}
-					</ol>
+					</Timeline>
 				</section>
 
 				<!-- Education Section -->
 				<section id="education" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Education">
-					<div
-						class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-					>
-						<h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">Education</h2>
-					</div>
+					<SectionHeading label="Education" />
 
-					<h2 class="mb-4 hidden text-sm font-bold uppercase tracking-widest text-neutral-200 lg:block">Education</h2>
-
-					<ol
-						class="relative space-y-10 before:absolute before:left-[3.5px] before:top-2 before:bottom-2 before:w-px before:bg-neutral-800 sm:before:left-[4.5px]"
-					>
+					<Timeline ariaLabel="Education timeline">
 						{EDUCATION.map((education) => <Education {...education} />)}
-					</ol>
+					</Timeline>
 
 					<!-- Resume CTA -->
 					<div class="mt-12">
@@ -175,25 +157,25 @@ const { name, email, role, about } = PERSONAL_INFO;
 							href="https://astro.build/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
-							rel="nopener noreferrer">Astro</a
+							rel="noopener noreferrer">Astro</a
 						>{' '}
 						and{' '}
 						<a
 							href="https://tailwindcss.com/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
-							rel="nopener noreferrer">Tailwind CSS</a
+							rel="noopener noreferrer">Tailwind CSS</a
 						>.{' '}Hosted on{' '}
 						<a
 							href="https://www.cloudflare.com/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
-							rel="nopener noreferrer">Cloudflare</a
+							rel="noopener noreferrer">Cloudflare</a
 						>.{' '}Originally built by{' '}
 						<a
 							href="https://github.com/thevrus/vrus.vercel.app"
 							target="_blank"
-							rel="nopener noreferrer"
+							rel="noopener noreferrer"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							>Vadim Rusin</a
 						>.

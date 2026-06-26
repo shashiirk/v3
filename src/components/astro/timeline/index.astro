@@ -1,0 +1,14 @@
+---
+interface Props {
+	ariaLabel?: string;
+}
+
+const { ariaLabel } = Astro.props;
+---
+
+<ol
+	class="relative space-y-10 before:absolute before:bottom-2 before:left-[3.5px] before:top-2 before:w-px before:bg-neutral-800 sm:before:left-[4.5px]"
+	aria-label={ariaLabel}
+>
+	<slot />
+</ol>

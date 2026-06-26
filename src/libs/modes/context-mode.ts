@@ -113,7 +113,7 @@ const contextMode = (cursor: HTMLElement, props: CursorContextProps, interactEle
 	const handleMouseOver = (e: MouseEvent) => {
 		isHovered = true;
 		cursorTarget = e.target as HTMLElement;
-		const borderRadius = Number(window.getComputedStyle(cursorTarget).borderRadius.slice(0, -2) as any);
+		const borderRadius = Number(window.getComputedStyle(cursorTarget).borderRadius.slice(0, -2));
 
 		if (elementHasProperty(cursorTarget, CURSOR_ATTRIBUTES.lift)) {
 			cursor.classList.add('c-cursor-lift_active');

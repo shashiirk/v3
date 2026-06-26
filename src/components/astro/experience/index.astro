@@ -1,23 +1,21 @@
 ---
 import type { WorkExperienceItem } from '@/types';
+import Badge from '@/components/astro/badge/index.astro';
 import IconRenderer from '@/components/astro/icon-renderer/index.astro';
+import TimelineEntry from '@/components/astro/timeline-entry/index.astro';
 
-const { startDate, endDate, role, company, url, description, technologies } = Astro.props as WorkExperienceItem;
+type Props = WorkExperienceItem;
+
+const { startDate, endDate, role, company, url, description, technologies } = Astro.props;
 const duration = `${startDate} - ${endDate}`;
 ---
 
-<li class="relative pl-8 sm:pl-10">
-	<span class="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-indigo-400 ring-4 ring-black" aria-hidden="true"></span>
-
-	<div class="z-10 mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500" aria-label={duration}>
-		{duration}
-	</div>
-
+<TimelineEntry duration={duration}>
 	<a
 		class="group/link relative inline-flex items-baseline text-base font-medium leading-tight text-neutral-200 hover:text-neutral-300 focus-visible:text-neutral-300"
 		href={url}
 		target="_blank"
-		rel="noreferrer"
+		rel="noopener noreferrer"
 		aria-label={company}
 	>
 		<h3 class="font-medium leading-snug text-neutral-200">
@@ -29,16 +27,14 @@ const duration = `${startDate} - ${endDate}`;
 
 	<!-- List of technologies -->
 	{
-		technologies.length && (
+		technologies.length > 0 && (
 			<ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
 				{technologies.map((technology) => (
 					<li class="mr-1.5 mt-2">
-						<div class="flex items-center rounded-full border border-neutral-700 border-opacity-50 bg-neutral-400/10 px-3 py-1 text-xs font-medium leading-5 text-neutral-300 shadow backdrop-blur-sm">
-							{technology}
-						</div>
+						<Badge label={technology} />
 					</li>
 				))}
 			</ul>
 		)
 	}
-</li>
+</TimelineEntry>
