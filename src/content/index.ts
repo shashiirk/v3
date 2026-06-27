@@ -1,14 +1,14 @@
-import type { PersonalInfo, SocialMediaItem, WorkExperienceItem } from '@/types';
+import type { EducationItem, PersonalInfo, SkillItem, SocialMediaItem, WorkExperienceItem } from '@/types';
 
 export const PERSONAL_INFO: PersonalInfo = {
 	name: 'Shashikanth Reddy',
 	email: 'hello@shashikanth.dev',
 	role: 'Full-Stack Engineer',
-	about: `I'm a Software Engineer with over three years of experience in full-stack development, currently pursuing my Master's degree in Computer Science at <a href="https://www.kennesaw.edu" target="_blank" rel="nopener noreferrer" class="font-medium hover:text-indigo-400 hover:underline focus-visible:text-indigo-400">Kennesaw State University</a>. My journey into tech began with Brad Traversy's HTML & CSS crash course on YouTube, sparking my love for building things and turning into a passion for coding and full-stack development.
+	about: `I'm a Software Engineer with four plus years of production experience building scalable, reliable software across the full stack. My journey into tech started with Brad Traversy's HTML & CSS crash course on YouTube, and turned into a career spent shipping real production systems across the stack.
 
-	Since then, I've worked in various environments, from startups to established companies, focusing on creating user-friendly applications that are attractive, easy to navigate, and efficient behind the scenes. I enjoy simplifying complex tasks to enhance the user experience. Proficient in languages like Java, JavaScript, and Python, I've also worked with frameworks like Spring Boot, React, and Next.js.
+	I work primarily with Java and Spring Boot on the backend, and React, Next.js, and TypeScript on the frontend, with PostgreSQL, AWS, and Kubernetes rounding out the stack. I care most about the parts of engineering that don't show up in a demo, like query performance, API security, and making sure the system behaves the same way at 2am as it does in a code review.
 
-	Always open to new opportunities and collaborations—let's create something amazing together!
+	Outside of work I'm usually deep in a side project or learning something adjacent to my day job. Always open to interesting problems and good collaborators, so feel free to reach out below.
   `
 };
 
@@ -35,16 +35,54 @@ export const SOCIAL_MEDIA_ITEMS: SocialMediaItem[] = [
 	}
 ];
 
+export const SKILLS: SkillItem[] = [
+	{ name: 'Java' },
+	{ name: 'Kotlin' },
+	{ name: 'JavaScript' },
+	{ name: 'TypeScript' },
+	{ name: 'Python' },
+	{ name: 'Go' },
+	{ name: 'SQL' },
+	{ name: 'React' },
+	{ name: 'Next.js' },
+	{ name: 'Angular' },
+	{ name: 'Redux' },
+	{ name: 'Tailwind CSS' },
+	{ name: 'Spring Boot' },
+	{ name: 'Node.js' },
+	{ name: 'Express.js' },
+	{ name: 'REST APIs' },
+	{ name: 'GraphQL' },
+	{ name: 'Microservices' },
+	{ name: 'PostgreSQL' },
+	{ name: 'MySQL' },
+	{ name: 'MongoDB' },
+	{ name: 'Redis' },
+	{ name: 'Elasticsearch' },
+	{ name: 'DynamoDB' },
+	{ name: 'Apache Kafka' },
+	{ name: 'RabbitMQ' },
+	{ name: 'Docker' },
+	{ name: 'Kubernetes' },
+	{ name: 'Jenkins' },
+	{ name: 'GitHub Actions' },
+	{ name: 'Prometheus' },
+	{ name: 'Grafana' },
+	{ name: 'AWS' },
+	{ name: 'GCP' },
+	{ name: 'Git' }
+];
+
 export const WORK_EXPERIENCES: WorkExperienceItem[] = [
 	{
 		company: 'Wisdom Square Technologies',
 		url: 'https://wisdomsquare.net',
-		role: 'Programmer',
+		role: 'Software Engineer',
 		startDate: 'March 2024',
 		endDate: 'Present',
 		description:
-			'Improved the internal logging framework, ensuring sensitive data was masked and privacy standards were met. Automated the sending of physical mail through third-party services, which reduced manual work and ensured timely delivery. Also created a reminder system that kept agents informed about scheduled interactions, improving response times and overall customer engagement.',
-		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'AWS']
+			"Built a secure file transfer platform integrating AWS S3, SFTP, and third-party storage providers for automated cross-platform document exchange across 20+ enterprise clients. Redesigned the authentication and authorization layer using OAuth 2.0 and JWT, enforcing fine-grained role-based access control across 12+ microservices. Developed a self-healing retry mechanism for distributed background jobs, and introduced API rate limiting and circuit breaker patterns that improved production availability to 99.95%. Also helped migrate legacy deployment scripts to containerized Kubernetes workloads, cutting deployment time from 25 minutes to under 5.",
+		technologies: ['Java', 'Spring Boot', 'AWS', 'Kubernetes', 'PostgreSQL']
 	},
 	{
 		company: 'Alippo',
@@ -53,8 +91,8 @@ export const WORK_EXPERIENCES: WorkExperienceItem[] = [
 		startDate: 'August 2022',
 		endDate: 'February 2024',
 		description:
-			'As part of the core team at this fast-growing startup, contributed to building and scaling key features. Integrated an in-app currency system into the checkout process for Android and iOS platforms, streamlining payments and reducing customer drop-offs. Redesigned the analytics service to work with multiple platforms, enabling comprehensive data collection and deeper business insights. Improved API security by implementing HMAC after a DDoS attack and optimized database queries with indexing, resulting in faster API response times and a smoother user experience.',
-		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'React']
+			'Owned the Alippo Money checkout integration for Android and iOS, implementing in-app purchase gateways with server-side receipt validation that increased checkout completion and cut fraudulent transactions. Neutralized an active DDoS attack on a critical payment API by designing and deploying HMAC-SHA256 request authentication. Refactored the analytics service into a provider-agnostic event routing layer, and optimized high-frequency queries via index tuning, cutting API response time by over half under peak load. Introduced Kafka-based async processing to decouple notifications from the core checkout flow.',
+		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Kafka', 'React']
 	},
 	{
 		company: 'Alippo',
@@ -63,7 +101,24 @@ export const WORK_EXPERIENCES: WorkExperienceItem[] = [
 		startDate: 'April 2022',
 		endDate: 'July 2022',
 		description:
-			'Developed a user-friendly activation screen and dashboard for the in-app currency system, leading to a smoother checkout experience. Improved internal workflows by enhancing the dashboard with advanced search, filtering, and order management tools, boosting operational efficiency. Leveraged TypeScript to improve code quality and maintainability, ensuring a scalable and reliable codebase.',
+			'Built the Alippo Money onboarding UI, including the activation screen and an interactive dashboard, improving first-session purchase conversion. Migrated 30+ frontend components to TypeScript, reducing runtime type errors and improving maintainability. Extended the JHipster admin dashboard with advanced search, bulk course cloning, and manual order management, cutting internal ops ticket resolution time.',
 		technologies: ['React', 'Next.js', 'TypeScript', 'JavaScript']
+	}
+];
+
+export const EDUCATION: EducationItem[] = [
+	{
+		institution: 'Kennesaw State University',
+		location: 'Marietta, United States',
+		degree: 'Master of Science, Computer Science',
+		startDate: 'August 2024',
+		endDate: 'May 2026'
+	},
+	{
+		institution: 'Anurag University',
+		location: 'Hyderabad, India',
+		degree: 'Bachelor of Engineering, Information Technology',
+		startDate: 'July 2018',
+		endDate: 'May 2022'
 	}
 ];

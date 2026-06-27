@@ -1,0 +1,20 @@
+---
+import type { SkillItem } from '@/types';
+import Badge from '@/components/astro/badge/index.astro';
+
+interface Props {
+	skills: SkillItem[];
+}
+
+const { skills } = Astro.props;
+---
+
+<ul class="flex flex-wrap gap-2" aria-label="Skills">
+	{
+		skills.map((skill) => (
+			<li>
+				<Badge label={skill.name} />
+			</li>
+		))
+	}
+</ul>

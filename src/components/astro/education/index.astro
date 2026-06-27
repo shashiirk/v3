@@ -1,0 +1,19 @@
+---
+import type { EducationItem } from '@/types';
+import TimelineEntry from '@/components/astro/timeline-entry/index.astro';
+
+type Props = EducationItem;
+
+const { institution, location, degree, startDate, endDate } = Astro.props;
+const duration = `${startDate} - ${endDate}`;
+---
+
+<TimelineEntry duration={duration}>
+	<h3 class="font-medium leading-snug text-neutral-200">
+		{degree}
+	</h3>
+
+	<p class="mt-1 text-sm leading-normal text-neutral-400">
+		{institution}, {location}
+	</p>
+</TimelineEntry>

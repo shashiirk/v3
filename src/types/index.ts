@@ -19,8 +19,20 @@ export type WorkExperienceItem = {
 	role: string;
 	startDate: string;
 	endDate: string;
-	description: string;
+	description?: string;
 	technologies: string[];
+};
+
+export type SkillItem = {
+	name: string;
+};
+
+export type EducationItem = {
+	institution: string;
+	location: string;
+	degree: string;
+	startDate: string;
+	endDate: string;
 };
 
 export type IconType = SocialMediaItemType | 'ARROW';
