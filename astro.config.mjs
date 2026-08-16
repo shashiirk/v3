@@ -8,7 +8,7 @@ export default defineConfig({
 	server: {
 		port: 3000
 	},
-	site: 'https://shashikanth.dev',
+	site: process.env.SITE_URL || 'https://shashikanth.vercel.app',
 	integrations: [react(), sitemap()],
 	vite: {
 		plugins: [tailwindcss()]

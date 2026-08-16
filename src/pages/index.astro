@@ -13,6 +13,7 @@ import { PAGE_SEO_METADATA } from '@/content/meta';
 import avatar from '@/assets/avatar.png';
 
 const { name, email, role, about } = PERSONAL_INFO;
+const resumeUrl = import.meta.env.PUBLIC_RESUME_URL;
 ---
 
 <Layout>
@@ -124,7 +125,7 @@ const { name, email, role, about } = PERSONAL_INFO;
 							aria-label="View Resume"
 							target="_blank"
 							rel="noreferrer noopener"
-							href="https://files.shashikanth.dev/resume.pdf"
+							href={resumeUrl}
 						>
 							<span class="whitespace-nowrap">
 								<span
@@ -169,10 +170,10 @@ const { name, email, role, about } = PERSONAL_INFO;
 							rel="noopener noreferrer">Tailwind CSS</a
 						>.{' '}Hosted on{' '}
 						<a
-							href="https://www.cloudflare.com/"
+							href="https://vercel.com/"
 							class="font-normal text-neutral-400 hover:text-indigo-400 hover:underline focus-visible:text-indigo-400"
 							target="_blank"
-							rel="noopener noreferrer">Cloudflare</a
+							rel="noopener noreferrer">Vercel</a
 						>.{' '}Originally built by{' '}
 						<a
 							href="https://github.com/thevrus/vrus.vercel.app"
